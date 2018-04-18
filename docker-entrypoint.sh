@@ -18,6 +18,7 @@ env_keys() {
 		| grep -vE "^HOSTNAME$" \
 		| grep -vE "^JAVA_DEBIAN_VERSION$" \
 		| grep -vE "^JAVA_HOME$" \
+		| grep -vE "^JAVA_OPTS$" \
 		| grep -vE "^JAVA_VERSION$" \
 		| grep -vE "^LANG$" \
 		| grep -vE "^LIBPROCESS_IP$" \
@@ -36,7 +37,6 @@ env_keys() {
 		| grep -vE "^TOMCAT_VERSION$"
 }
 
-CATALINA_OPTS=""
 env_keys | while IFS= read -r key; do
 	val=$(eval "echo \$$key")
 	CATALINA_OPTS="${CATALINA_OPTS} -D${key}=${val}"
