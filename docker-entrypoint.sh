@@ -44,5 +44,6 @@ env_keys | while IFS= read -r key; do
 done
 
 export CATALINA_OPTS="$(cat ./catalina_opts) $@"
+echo $CATALINA_OPTS
 exec catalina.sh run
 
