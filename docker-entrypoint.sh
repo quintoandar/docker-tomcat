@@ -12,7 +12,10 @@ env_keys() {
 		| sort | uniq \
 		| grep -vE "^_$" \
 		| grep -vE "^CA_CERTIFICATES_JAVA_VERSION$" \
+		| grep -vE "^CATALINA_BASE$" \
 		| grep -vE "^CATALINA_HOME$" \
+		| grep -vE "^CATALINA_TMPDIR$" \
+		| grep -vE "^CLASSPATH$" \
 		| grep -vE "^GPG_KEYS$" \
 		| grep -vE "^HOME$" \
 		| grep -vE "^HOSTNAME$" \
@@ -20,6 +23,7 @@ env_keys() {
 		| grep -vE "^JAVA_HOME$" \
 		| grep -vE "^JAVA_OPTS$" \
 		| grep -vE "^JAVA_VERSION$" \
+		| grep -vE "^JRE_HOME$" \
 		| grep -vE "^LANG$" \
 		| grep -vE "^LIBPROCESS_IP$" \
 		| grep -vE "^LD_LIBRARY_PATH$" \
@@ -31,9 +35,12 @@ env_keys() {
 		| grep -vE "^SHLVL" \
 		| grep -vE "^TERM$" \
 		| grep -vE "^TOMCAT_ASC_URL$" \
+		| grep -vE "^TOMCAT_ASC_URLS$" \
 		| grep -vE "^TOMCAT_MAJOR$" \
 		| grep -vE "^TOMCAT_NATIVE_LIBDIR$" \
+		| grep -vE "^TOMCAT_SHA_512$" \
 		| grep -vE "^TOMCAT_TGZ_URL$" \
+		| grep -vE "^TOMCAT_TGZ_URLS$" \
 		| grep -vE "^TOMCAT_VERSION$"
 }
 
