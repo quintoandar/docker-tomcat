@@ -1,9 +1,7 @@
-FROM tomcat:8.0.32-jre8
+FROM tomcat:8-jre8
 RUN apt-get update && apt-get install -y --no-install-recommends -t jessie-backports \
     ca-certificates-java \
     openjdk-8-jre-headless \
-    unzip \
-    wget && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf $CATALINA_HOME/webapps/
 ENV JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=2 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -XX:+ExitOnOutOfMemoryError -XX:+PrintFlagsFinal"
