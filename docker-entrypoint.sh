@@ -53,8 +53,12 @@ done
 export CATALINA_OPTS="$(cat ./catalina_opts) $@"
 echo $CATALINA_OPTS
 
-EXTRA_SCRIPT=extra_script.sh
-test -x $EXTRA_SCRIPT && $_
+EXTRA_SCRIPT_PATH=$PWD/extra_script.sh
+if [ -x $EXTRA_SCRIPT_PATH ]
+then
+	echo Running $EXTRA_SCRIPT_PATH
+	$EXTRA_SCRIPT_PATH
+fi
 
 exec catalina.sh run
 
