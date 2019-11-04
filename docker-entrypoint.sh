@@ -52,5 +52,20 @@ done
 
 export CATALINA_OPTS="$(cat ./catalina_opts) $@"
 echo $CATALINA_OPTS
+
+# EXTRA_SCRIPT=extra_script.sh
+# if [ -x $EXTRA_SCRIPT ]
+# then
+# 	echo "Executing " $EXTRA_SCRIPT
+# 	exec $EXTRA_SCRIPT
+# fi
+
+
+echo "=========================="
+echo ${JDBC_URL}
+echo ${JDBC_USERNAME}
+echo ${JDBC_PASSWORD}
+echo "=========================="
+
 exec catalina.sh run
 
